@@ -2,3 +2,16 @@ body{
     font-family: 'Roboto', sans-serif;
 
 }
+.customer_cell{
+    margin-top: 30px;
+    @media only screen and (max-width:600px){
+        @include between(3,3)
+      {
+        clear: left;
+      }
+}
+}
+
+.add_new_customer{
+    width: 66%;
+}
