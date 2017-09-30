@@ -16,7 +16,7 @@ class Customers extends Component {
     }
 
     componentDidMount() {
-            const options = {
+        const options = {
             method: 'GET',
             headers: {
                 "Accept": "application/hal+json",
@@ -24,13 +24,10 @@ class Customers extends Component {
                 "Authorization": "Bearer MGI3ZTc2NDAtZTc0Yi00YzY5LTg0OGYtNmJiYjUzMTNjNTRk"
             }
         }
-            fetch(url, options)
-            .then(response => response.json())
-            .then(jsondata => this.setState({data: jsondata}))
-            .catch(function() {
-                alert('There was something wrong. Data could not be fetched :(((')
-            });
-        }
+        fetch(url, options).then(response => response.json()).then(jsondata => this.setState({data: jsondata})).catch(function() {
+            alert('There was something wrong. Data could not be fetched :(((')
+        });
+    }
 
     handleChangeFor = (propertyName) => (event) => {
         const {input} = this.state;
@@ -52,25 +49,23 @@ class Customers extends Component {
             },
             body: JSON.stringify(this.state.input)
         }
-        fetch(url + this.state.input.cprCvr, options)
-            .then(response => response.json())
-            .then(console.log(this.state.input))
+        fetch(url + this.state.input.cprCvr, options).then(response => response.json()).then(console.log(this.state.input))
         event.preventDefault();
     }
 
     createList() {
         return this.state.data._embedded.customers.map((customer) => {
-        return (
-                    <div key={customer.cprCvr} className='col s6 m4 l2 customer_cell'>
-                        <div className='name'>{customer.firstName}</div>
-                        <div className='surname'>{customer.lastName}</div>
-                        <div className='cprCvr'>{customer.cprCvr}</div>
-                    </div>
+            return (
+                <div key={customer.cprCvr} className='col s6 m4 l2 customer_cell'>
+                    <div className='name'>{customer.firstName}</div>
+                    <div className='surname'>{customer.lastName}</div>
+                    <div className='cprCvr'>{customer.cprCvr}</div>
+                </div>
             )
         });
     }
     render() {
-        if (!this.state.data)
+        if (!this.state.data) 
             return (
                 <div>
                     Loading Data...
@@ -80,7 +75,7 @@ class Customers extends Component {
             <div>
                 <h4>Customers:</h4>
                 <div className='row'>
-                {this.createList()}
+                    {this.createList()}
                 </div>
                 <h4>Add/edit a customer</h4>
                 <form onSubmit={this.handleSubmit} className='add_new_customer'>
