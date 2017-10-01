@@ -44,6 +44,7 @@ class Customers extends Component {
     }
 
     handleSubmit(event) {
+        let _this = this;
         const options = {
             method: 'PUT',
             headers: {
@@ -61,6 +62,7 @@ class Customers extends Component {
         })
         event.preventDefault();
     }
+
 
     createList() {
         return this.state.data._embedded.customers.map((customer) => {
@@ -106,7 +108,6 @@ class Customers extends Component {
                         Surname:
                         <input type='text' onChange={this.handleChangeFor('lastName')} value={this.state.input.lastName}/>
                     </label>
-
                     <input type='submit' value='Submit' className='submit_button_centered'/>
                 </form>
             </div>
