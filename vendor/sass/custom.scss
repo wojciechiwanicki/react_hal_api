@@ -1,17 +1,38 @@
-body{
+body {
     font-family: 'Roboto', sans-serif;
 
-}
-.customer_cell{
-    margin-top: 30px;
-    @media only screen and (max-width:600px){
-        @include between(3,3)
-      {
-        clear: left;
-      }
-}
+    .app_container {
+        margin-top: 50px;
+        border: 2px solid;
+        padding: 25px;
+        margin-bottom: 50px;
+        border-radius: 8px;
+
+        .customers_legend {
+            font-size: 18px;
+        }
+    }
 }
 
-.add_new_customer{
-    width: 66%;
+.customer_row {
+    @include even() {
+        background: lightgrey;
+    }
+}
+
+.input_fields_container {
+    label {
+        color: black;
+    }
+
+    .submit_button_centered {
+        background-color: gold;
+        width: 50%;
+        margin-left: 25%;
+        margin-right: 25%;
+        margin-bottom: 40px;
+        border-radius: 6px;
+        border: 1px solid black;
+
+    }
 }
