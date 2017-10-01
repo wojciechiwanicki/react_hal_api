@@ -44,7 +44,6 @@ class Customers extends Component {
     }
 
     handleSubmit(event) {
-        let _this = this;
         const options = {
             method: 'PUT',
             headers: {
