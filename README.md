@@ -8,3 +8,5 @@ to run this project:
 
 
 App is very simple, because I want to make it in as little time as possible. It is, nevertheless fully functional. It only lacks any extra/more advanced options. 
+
+remember to paste access token into customers.js file!
