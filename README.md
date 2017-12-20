@@ -7,14 +7,7 @@ to run this project:
 5) ``npm start``
 
 
-remember to paste access token into customers.js file!
+remember to paste  auth token into customers.js file!
 
 
-App is very simple it is, nevertheless fully functional. It only lacks any extra/more advanced options. Some shortcuts were made, to spend max 5h on this code
-
-For future:
-1) make it more modular
-2) implement redux: fetching, putting data, refetching should despatch an action on store.
-3) have consistent design.
-4) add automatic authentication
-5) using react views, add options of managing accounts. 
+App is very simple it is, nevertheless fully functional.
